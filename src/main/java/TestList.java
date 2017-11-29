@@ -12,13 +12,16 @@ import java.util.List;
        String str = "new string";
        int addLoading = 100000;
        int removeLoading = 20000;
-       int getLoading = 20000;
+       int getLoading1 = 20000;
+       int getLoading2 = 50000;
        addInMyList(myList, addLoading, str);
        addInArrayList(arrayList, addLoading, str);
        removeFromMyList(myList, removeLoading, str);
        removeFromArrayList(arrayList, removeLoading, str);
-       getFromMyList(myList, getLoading);
-       getFromArrayList(arrayList, getLoading);
+       getFromMyList1(myList, getLoading1);
+       getFromMyList2(myList, getLoading2);
+       getFromArrayList1(arrayList, getLoading1);
+       getFromArrayList2(arrayList, getLoading2);
    }
        private static void addInMyList (MyArrayList myList, int addLoading, String str ) {
            long startAdd1 = System.currentTimeMillis();
@@ -52,20 +55,36 @@ import java.util.List;
         int timeRemove2 = (int) (System.currentTimeMillis() - startRemove2);
         LOG.info(String.format("Performance of ArrayList.remove() %d on %d elements", timeRemove2, removeLoading));
     }
-    private static void getFromMyList (MyArrayList myList, int getLoading) {
+    private static void getFromMyList1 (MyArrayList myList, int getLoading1) {
         long startGet1 = System.currentTimeMillis();
-        for (int i = 0; i < getLoading; i++) {
+        for (int i = 0; i < getLoading1; i++) {
             myList.get(i);
         }
         int timeGet1 = (int) (System.currentTimeMillis() - startGet1);
-        LOG.info(String.format("Performance of myList.get() %d on %d elements", timeGet1, getLoading));
+        LOG.info(String.format("Performance of myList.get() %d on %d elements", timeGet1, 20000));
     }
-    private static void getFromArrayList (List<String> arrayList, int getLoading) {
+    private static void getFromArrayList1 (List<String> arrayList, int getLoading1) {
        long startGet2 = System.currentTimeMillis();
-       for (int i = 0; i<getLoading; i++){
+       for (int i = 0; i<getLoading1; i++){
            arrayList.get (i);
        }
        int timeGet2 = (int)(System.currentTimeMillis() - startGet2);
-       LOG.info(String.format("Performance of ArrayList.get() %d on %d elements", timeGet2, getLoading));
+       LOG.info(String.format("Performance of ArrayList.get() %d on %d elements", timeGet2, 50000));
 }
+     private static void getFromMyList2 (MyArrayList myList, int getLoading2) {
+         long startGet1 = System.currentTimeMillis();
+         for (int i = 0; i < getLoading2; i++) {
+             myList.get(i);
+         }
+         int timeGet1 = (int) (System.currentTimeMillis() - startGet1);
+         LOG.info(String.format("Performance of myList.get() %d on %d elements", timeGet1, 20000));
+     }
+     private static void getFromArrayList2 (List<String> arrayList, int getLoading2) {
+         long startGet2 = System.currentTimeMillis();
+         for (int i = 0; i<getLoading2; i++){
+             arrayList.get (i);
+         }
+         int timeGet2 = (int)(System.currentTimeMillis() - startGet2);
+         LOG.info(String.format("Performance of ArrayList.get() %d on %d elements", timeGet2, 50000));
+     }
 }
