@@ -14,6 +14,7 @@ public class Main {
                 LOG.info(Choices.CHOICE_1.getMessage());
                 LOG.info(Choices.CHOICE_2.getMessage());
                 LOG.info(Choices.CHOICE_3.getMessage());
+                LOG.info(Choices.CHOICE_4.getMessage());
                 int choice = scan.nextInt();
                 if (choice == 1) {
                     TestList.testList();
@@ -21,6 +22,9 @@ public class Main {
                     TestDeque.testDeque();
                 } else if (choice == 3) {
                     TestComparison.useCompareableAndComparator();
+                } else if (choice == 4) {
+                    running = false;
+
                 } else {
                     TestList.testList();
                 }
@@ -31,7 +35,7 @@ public class Main {
     }
 
     enum Choices {
-        CHOICE_1("Press 1 to see MyArrayList VS ArrayList "), CHOICE_2("Press 2 to see Compare / Comparable"), CHOICE_3("Press 3 to see Deque");
+        CHOICE_1("Press 1 to see MyArrayList VS ArrayList "), CHOICE_2("Press 2 to see Compare / Comparable"), CHOICE_3("Press 3 to see Deque"), CHOICE_4("Press 4 to exit");
         private String message;
 
         Choices(String message) {
