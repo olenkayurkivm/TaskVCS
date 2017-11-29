@@ -9,8 +9,8 @@ import java.util.List;
     private static final Logger LOG = Logger.getLogger(TestComparison.class);
 
      static void useCompareableAndComparator () {
-         String[] countryNames = {"USA", "UK", "Canada", "Mexico"};
-         String[] capitalNames = {"Washington", "London", "Ottawa", "Mexico"};
+         String[] countryNames = {"USA", "UK", "Canada", "Ukraine"};
+         String[] capitalNames = {"Washington", "London", "Ottawa", "Kyiv"};
          List<Country> countries1 = new ArrayList<>();
          Country[] countries2 = new Country[countryNames.length];
          for (int i = 0; i < countryNames.length; i++) {
